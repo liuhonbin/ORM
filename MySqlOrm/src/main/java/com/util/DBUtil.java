@@ -44,11 +44,13 @@ public class DBUtil {
 			st = conn.createStatement();
 			st.addBatch(sql);
 			conn.commit();
+			return 1;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			try {
 				conn.rollback();
+				return 0;
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
