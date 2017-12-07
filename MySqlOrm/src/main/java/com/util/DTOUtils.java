@@ -10,10 +10,11 @@ import com.base.BaseEntity;
 
 
 public class DTOUtils {
-    
+    //通过传入的class类名去反实列化去赋值
 	public static <T extends BaseEntity> T ReqBuildEntity(ResultSet rs,Class<T> clazz){
 		T t=null;
 		try {
+			//jdk 代理
 			t=clazz.newInstance();
 			Field fs[]=clazz.getDeclaredFields();
 			for (Field f : fs) {

@@ -1,14 +1,12 @@
 package com.entity;
 
-import java.lang.reflect.InvocationTargetException;
 import java.sql.Timestamp;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import com.base.BaseEntity;
 
 
 public class Book extends BaseEntity {
+	
 	private String book_id;
 	private String book_name;
 	private String book_image;

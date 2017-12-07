@@ -3,6 +3,8 @@ package com.util;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.base.BaseEntity;
 
@@ -26,10 +28,10 @@ public class SqlUtil {
 			Map<String, Object> p = baseEntity.conditionParam();
 			for (Entry<String, Object> entry : p.entrySet()) {
 				String key = entry.getKey();
-				if (sql.indexOf("#{\\s*" + key + "\\s*}") > 0) {
-					str = sql.replace("#{\\s*" + key + "\\s*}", "'" + p.get(key).toString() + "'");
-					sql = str;
-				}
+				Pattern pt = Pattern.compile("#\\{\\s*" + key + "\\s*\\}");
+				Matcher m = pt.matcher(sql);
+				str = m.replaceAll("'" + p.get(key).toString() + "'");
+				sql = str;
 			}
 		}else{
 			return sql;

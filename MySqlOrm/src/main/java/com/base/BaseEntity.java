@@ -1,5 +1,6 @@
 package com.base;
 
+import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -8,8 +9,10 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class BaseEntity {
+public class BaseEntity implements Serializable {
     
+	private static final long serialVersionUID = 1L;
+
 	/**
 	  * conditionParam
 	  * @Title: conditionParam(构造一个map对象)
