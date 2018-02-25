@@ -10,7 +10,7 @@ public class DB {
 	public String DBDRIVER = "com.mysql.jdbc.Driver";
 	public String DBURL = "jdbc:mysql://127.0.0.1:3306/xs";
 	public String DBUSER = "root";
-	public String DBPASS = "lhb123";	
+	public String DBPASS = "123456";	
 	
 	public String DBDRIVER_2 = "com.mysql.jdbc.Driver";
 	public String DBURL_2 = "jdbc:mysql://47.93.22.26:3306/xs?useUnicode=true&characterEncoding=UTF8";

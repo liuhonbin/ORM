@@ -1,5 +1,6 @@
 package com.test;
 
+import java.net.URL;
 import java.util.List;
 
 import com.base.BaseDao;
@@ -21,12 +22,11 @@ public class Test {
 
 		
 		
-		BookDao dao = JdbcLhbTemplate.execute(BookDao.class);
+		BookDao dao = JdbcLhbTemplate.executeProxyCgbli(BookDao.class);
 		Book book = new Book();
 		book.setBook_name("我的测试数据68");
 		List<Book> list = dao.getList(book);
 		System.out.println(list.get(0).toString());
-		
 		
 	}
 

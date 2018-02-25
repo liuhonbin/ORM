@@ -14,7 +14,7 @@ import com.util.SqlUtil;
 
 public class BaseImpl implements BaseDao {
 
-	public <T extends BaseEntity> List<T> getList(String sql, Class<T> clazz, BaseEntity baseEntity) {
+	public <T> List<T> getList(String sql, Class<T> clazz, BaseEntity baseEntity) {
 		List<T> list = new ArrayList<T>();
 		String newSql = null;
 		ResultSet rs = null;
@@ -46,7 +46,7 @@ public class BaseImpl implements BaseDao {
 		return list;
 	}
 
-	public <T extends BaseEntity> T queryForObject(String sql, Class<T> clazz, BaseEntity baseEntity) {
+	public <T> T queryForObject(String sql, Class<T> clazz, BaseEntity baseEntity) {
 		String newSql = null;
 		ResultSet rs = null;
 		try {
