@@ -10,6 +10,6 @@ public interface BookDao {
        
 	  List<Book> getList(String sql, Class<?> clazz, BaseEntity baseEntity);
       
-	  @Sql(sql_value="select * from book ",type=Book.class)	
+	  @Sql(sql="select * from book ",return_type=Book.class)	
       List<Book> getList(BaseEntity baseEntity);
    }

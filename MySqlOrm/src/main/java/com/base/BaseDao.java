@@ -7,7 +7,7 @@ public interface BaseDao {
 	
 	<T extends BaseEntity> List<T> getList(String sql,Class<T> clazz,BaseEntity baseEntity);
 	
-	<T extends BaseEntity> T getOne(String sql,Class<T> clazz,BaseEntity baseEntity);  
+	<T extends BaseEntity> T queryForObject(String sql,Class<T> clazz,BaseEntity baseEntity);  
 	   
 	int update (String sql,BaseEntity baseEntity); 
 	

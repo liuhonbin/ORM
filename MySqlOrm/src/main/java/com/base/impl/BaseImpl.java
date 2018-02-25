@@ -46,7 +46,7 @@ public class BaseImpl implements BaseDao {
 		return list;
 	}
 
-	public <T extends BaseEntity> T getOne(String sql, Class<T> clazz, BaseEntity baseEntity) {
+	public <T extends BaseEntity> T queryForObject(String sql, Class<T> clazz, BaseEntity baseEntity) {
 		String newSql = null;
 		ResultSet rs = null;
 		try {
